@@ -2,8 +2,7 @@
 //iife - this wraps the code in a function so it isn't accidentally exposed
 //to other javascript in other files. It is not required.
 
-    var width=800, height=600
-
+    var width=600, height=400
     //read in our csv file
     d3.csv("./cars.csv").then((data) => {
         const svg = d3.select("#scatterplot");
@@ -80,8 +79,6 @@
             .on('mouseover', (event,d) => { //when mouse is over point
                 d3.select(event.currentTarget) //add a stroke to highlighted point
                     .style("stroke", "black");
-
-
                 d3.select('#tooltip') // add text inside the tooltip div
                     .style('display', 'block') //make it visible
                     .html(` <h1 class="tooltip-title">${d.manufacturer}</h1>          
@@ -106,3 +103,5 @@
 
 
 })();
+
+
